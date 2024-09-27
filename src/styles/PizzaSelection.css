@@ -1,0 +1,62 @@
+.pizza-selection-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.size-selection {
+  margin-bottom: 20px;
+}
+
+.size-selection button {
+  background-color: #fbc02d;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.size-selection button.active {
+  background-color: #e53935; /* Vermelho quando ativo */
+  color: white;
+}
+
+.size-selection button:hover {
+  background-color: #ffdd57;
+  transform: scale(1.05);
+}
+
+.flavor-selection {
+  margin-bottom: 20px;
+}
+
+.flavor-selection label {
+  display: block;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.flavor-selection input {
+  margin-right: 10px;
+}
+
+.add-button {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+.add-button:active {
+  background-color: #b71c1c;
+}

@@ -1,0 +1,98 @@
+/* Paleta de cores personalizada */
+:root {
+  --primary-color: #E53935; /* Vermelho pizza */
+  --primary-dark: #B71C1C;  /* Vermelho escuro */
+  --primary-light: #FFCDD2; /* Vermelho claro */
+  --secondary-color: #FBC02D; /* Amarelo queijo */
+  --background-color: #F5F5F5; /* Fundo claro */
+  --text-color: #212121; /* Texto escuro */
+  --highlight-color: #FFCC80; /* Destaques suaves */
+  --shadow-color: rgba(0, 0, 0, 0.15); /* Sombras suaves */
+  --hover-shadow-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo do container de login */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--background-color);
+  padding: 20px;
+}
+
+.login-card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px var(--shadow-color);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.login-card h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: var(--primary-dark);
+}
+
+/* Formulário de login */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-input {
+  padding: 12px 20px;
+  border: 2px solid var(--primary-light);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: var(--background-color);
+}
+
+.login-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Estilo do botão */
+.login-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px var(--hover-shadow-color);
+}
+
+.login-button:active {
+  background-color: var(--primary-light);
+  transform: scale(0.98);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 10px;
+  }
+
+  .login-card {
+    padding: 30px;
+  }
+
+  .login-button {
+    padding: 10px 18px;
+  }
+}

@@ -1,0 +1,185 @@
+/* Paleta de cores temáticas aprimorada */
+:root {
+  --primary-color: #E53935; /* Vermelho pizza vibrante */
+  --primary-dark: #B71C1C;  /* Vermelho escuro mais intenso */
+  --primary-light: #FFCDD2; /* Vermelho claro */
+  --secondary-color: #FBC02D; /* Amarelo queijo */
+  --background-color: #F5F5F5; /* Fundo claro */
+  --text-color: #212121; /* Texto escuro */
+  --card-bg-color: #FFF3E0; /* Fundo de cartão suave */
+  --highlight-color: #FFCC80; /* Destaques suaves */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Sombra leve */
+  --hover-shadow-color: rgba(0, 0, 0, 0.2); /* Sombra ao hover */
+  --wood-background: url('https://www.toptal.com/designers/subtlepatterns/patterns/wood_pattern.png'); /* Textura de madeira */
+  --pizza-background: url('https://i.imgur.com/XoJhsHx.png'); /* Padrão de pizza */
+  --menu-bg: rgba(255, 237, 160, 0.9); /* Fundo de cardápio translúcido */
+}
+
+/* Corpo e fontes */
+body {
+  margin: 0;
+  font-family: 'Fredoka One', cursive; /* Fonte divertida e temática */
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Estilos gerais */
+.container {
+  display: flex;
+  height: 100vh;
+  background-color: var(--background-color);
+  overflow: hidden;
+  background-image: var(--wood-background); /* Textura de madeira */
+  background-size: cover;
+}
+
+/* Sidebar estilo cardápio */
+.sidebar {
+  width: 250px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  padding: 20px;
+  box-shadow: 4px 0 10px var(--shadow-color);
+  border-right: 4px solid var(--primary-dark);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.sidebar ul li {
+  padding: 15px 0;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  color: var(--secondary-color);
+  border-radius: 6px;
+}
+
+.sidebar ul li:hover {
+  background-color: var(--primary-light);
+  transform: translateX(10px);
+  box-shadow: 0 5px 15px var(--hover-shadow-color);
+  border-radius: 8px;
+}
+
+.sidebar ul li:active {
+  transform: translateX(5px);
+  box-shadow: none;
+}
+
+.sidebar ul li i {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+/* Estilos para o lado direito */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: var(--menu-bg);
+  backdrop-filter: blur(5px);
+  border-radius: 20px;
+  box-shadow: -4px 0 10px var(--shadow-color);
+  position: relative;
+  color: var(--text-color);
+}
+
+.content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: var(--pizza-background); /* Padrão de pizza */
+  background-size: 80px;
+  opacity: 0.05;
+  z-index: -1;
+}
+
+/* Estilo aprimorado para cards */
+.card {
+  background-color: var(--card-bg-color);
+  padding: 20px;
+  margin: 15px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px var(--hover-shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px var(--hover-shadow-color);
+}
+
+/* Estilo aprimorado para botões */
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-light);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px var(--hover-shadow-color);
+}
+
+button:active {
+  background-color: var(--primary-dark);
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+/* Feedback visual para confirmação de pedido */
+.order-confirmation {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--highlight-color);
+  border-radius: 8px;
+  text-align: center;
+  color: var(--primary-dark);
+  font-size: 18px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos aprimorados para gráficos e informações */
+.chart-box {
+  width: 100%;
+  height: 200px;
+  margin: 30px 0;
+  background-color: var(--card-bg-color);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.chart-box:hover {
+  box-shadow: 0 10px 20px var(--hover-shadow-color);
+}

@@ -1,0 +1,13 @@
+.sabores-mais-pedidos-container {
+    padding: 20px;
+  }
+  
+  .sabores-mais-pedidos-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sabores-mais-pedidos-container li {
+    margin-bottom: 10px;
+  }
+  

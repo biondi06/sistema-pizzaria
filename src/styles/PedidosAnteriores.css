@@ -1,0 +1,26 @@
+.pedidos-anteriores-container {
+    padding: 20px;
+  }
+  
+  .pedidos-anteriores-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .pedidos-anteriores-container li {
+    margin-bottom: 15px;
+  }
+  
+  .pedidos-anteriores-container button {
+    padding: 5px 10px;
+    background-color: #041b33;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pedidos-anteriores-container button:hover {
+    background-color: #f50057;
+  }
+  

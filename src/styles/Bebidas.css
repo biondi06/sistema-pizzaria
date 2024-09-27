@@ -1,0 +1,67 @@
+.bebidas-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.type-selection {
+  margin-bottom: 20px;
+}
+
+.type-selection button {
+  background-color: #fbc02d;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.type-selection button.active {
+  background-color: #e53935; /* Vermelho quando ativo */
+  color: white;
+}
+
+.type-selection button:hover {
+  background-color: #ffdd57;
+  transform: scale(1.05);
+}
+
+.beverages-list {
+  margin-top: 20px;
+}
+
+.beverage-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #ffe0b2;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.beverage-item span {
+  font-size: 18px;
+}
+
+.add-button {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+.add-button:active {
+  background-color: #b71c1c;
+}

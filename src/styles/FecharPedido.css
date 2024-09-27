@@ -1,0 +1,89 @@
+.fechar-pedido-container {
+    padding: 20px;
+  }
+  
+  .order-summary ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .order-summary li {
+    margin-bottom: 10px;
+  }
+  
+  .address-section {
+    margin-top: 20px;
+  }
+  
+  .address-input-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .address-input-container.valid {
+    border-color: #4caf50; /* Verde para endereço válido */
+    background-color: #e8f5e9; /* Verde claro para feedback visual */
+  }
+  
+  .address-input-container.invalid {
+    border-color: #f44336; /* Vermelho para endereço inválido */
+    background-color: #ffebee; /* Vermelho claro para feedback visual */
+  }
+  
+  .address-icon {
+    margin-right: 10px;
+    color: #888;
+    font-size: 1.5em;
+  }
+  
+  .address-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    background-color: transparent;
+  }
+  
+  .address-input:focus {
+    outline: none;
+  }
+  
+  .validation-icon {
+    margin-left: 10px;
+    font-size: 1.5em;
+  }
+  
+  .validation-icon.valid {
+    color: #4caf50; /* Ícone de check verde */
+  }
+  
+  .validation-icon.invalid {
+    color: #f44336; /* Ícone de alerta vermelho */
+  }
+  
+  .time-section {
+    margin-top: 20px;
+  }
+  
+  .confirm-button {
+    padding: 15px 20px;
+    background-color: #041b33;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .confirm-button:hover {
+    background-color: #f50057;
+    transform: scale(1.05);
+  }
+  

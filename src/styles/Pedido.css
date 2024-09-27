@@ -1,0 +1,33 @@
+.pedido-container {
+    padding: 20px;
+  }
+  
+  .pedido-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .pedido-container li {
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .pedido-container button {
+    padding: 5px 10px;
+    background-color: #f50057;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .pedido-container button:hover {
+    background-color: #041b33;
+  }
+  
+  h3 {
+    margin-top: 20px;
+  }
+  
