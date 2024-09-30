@@ -3,7 +3,7 @@
   justify-content: center; /* Centraliza horizontalmente */
   align-items: center; /* Centraliza verticalmente */
   height: 100vh; /* Ocupa a altura total da tela */
-  padding: 0 20px; /* Garante que o conteúdo não toque as laterais em telas menores */
+  padding: 0 20px; /* Evita que o conteúdo toque as laterais */
 }
 
 .opinar-container {
@@ -11,9 +11,9 @@
   background-color: var(--card-bg-color); 
   border-radius: 12px;
   box-shadow: 0 10px 30px var(--shadow-color); 
+  max-width: 700px; /* Tamanho máximo da interface em telas grandes */
   width: 100%; /* Ocupar toda a largura possível */
-  max-width: 700px; /* Limita o tamanho máximo do contêiner */
-  margin: 0 auto; /* Centraliza horizontalmente */
+  margin: 0 auto; /* Centraliza o container */
   font-family: 'Poppins', sans-serif;
   color: var(--text-color);
 }
@@ -49,7 +49,7 @@ strong {
 }
 
 textarea {
-  width: calc(100% - 40px); /* Reduz um pouco a largura para evitar que toque as laterais */
+  width: calc(100% - 40px); /* Garante um pequeno espaçamento nas laterais */
   height: 150px;
   padding: 15px;
   border: 2px solid var(--primary-light);
@@ -59,7 +59,7 @@ textarea {
   background-color: var(--background-color); 
   transition: border-color 0.3s ease, background-color 0.3s ease;
   box-shadow: 0 5px 15px var(--shadow-color); 
-  resize: none; 
+  resize: none; /* Remove a opção de redimensionar */
 }
 
 textarea:focus {
@@ -94,4 +94,37 @@ button:active {
   background-color: var(--secondary-color); 
   transform: scale(0.98);
   box-shadow: none;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .opinar-container {
+    padding: 20px; /* Reduz o padding em telas menores */
+    max-width: 90%; /* Ajusta a largura para ocupar 90% da tela no celular */
+  }
+
+  h2 {
+    font-size: 24px; /* Reduz o tamanho da fonte do título */
+  }
+
+  textarea {
+    height: 120px; /* Reduz a altura do campo de texto em telas menores */
+  }
+
+  button {
+    font-size: 16px; /* Reduz o tamanho do botão */
+    padding: 12px;
+  }
+}
+
+/* Ajustes adicionais para telas extremamente pequenas */
+@media (max-width: 480px) {
+  .opinar-container {
+    padding: 15px;
+    max-width: 100%; /* Ocupar toda a largura da tela */
+  }
+
+  textarea {
+    height: 100px; /* Ajuste para telas muito pequenas */
+  }
 }
