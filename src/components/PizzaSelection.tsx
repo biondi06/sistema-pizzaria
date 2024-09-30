@@ -72,7 +72,7 @@ const PizzaSelection: React.FC<PizzaSelectionProps> = ({ addPizza }) => {
     <div className="pizza-selection-container">
       <h2>Escolha sua Pizza</h2>
 
-      {/* Divisão horizontal para seleção de tamanho */}
+      {/* Seleção de Tamanho */}
       <div className="size-selection">
         <h3>Tamanho</h3>
         <div className="size-buttons">
@@ -88,26 +88,27 @@ const PizzaSelection: React.FC<PizzaSelectionProps> = ({ addPizza }) => {
         </div>
       </div>
 
-      {/* Divisão horizontal para seleção de sabores */}
-      <div className="flavor-selection">
-        <h3>Sabores</h3>
-        <div className="flavor-checkboxes">
-          {flavors.map((flavor) => (
-            <label key={flavor} className="flavor-label">
-              <input
-                type="checkbox"
-                value={flavor}
-                onChange={() => handleFlavorChange(flavor)}
-                checked={selectedFlavors.includes(flavor)}
-                disabled={!selectedFlavors.includes(flavor) && selectedFlavors.length >= 2}
-              />
-              {flavor}
-            </label>
-          ))}
+      {/* Sabores aparecem somente se o tamanho for selecionado */}
+      {selectedSize && (
+        <div className="flavor-selection">
+          <h3>Sabores</h3>
+          <div className="flavor-checkboxes">
+            {flavors.map((flavor) => (
+              <label key={flavor} className="flavor-label">
+                <input
+                  type="checkbox"
+                  value={flavor}
+                  onChange={() => handleFlavorChange(flavor)}
+                  checked={selectedFlavors.includes(flavor)}
+                  disabled={!selectedFlavors.includes(flavor) && selectedFlavors.length >= 2}
+                />
+                {flavor}
+              </label>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
-      {/* Botão para adicionar a pizza ao pedido */}
       <button className="add-button" onClick={handleAddPizza}>
         Adicionar Pizza
       </button>

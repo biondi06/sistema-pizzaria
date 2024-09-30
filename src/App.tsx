@@ -120,7 +120,6 @@ const App: React.FC = () => {
         return (
           <div className="content">
             <PizzaSelection addPizza={addPizzaToOrder} />
-            <div className="chart-box">Gráfico de Pizzas Mais Pedidas (placeholder)</div>
           </div>
         );
       case 'Bebidas':
