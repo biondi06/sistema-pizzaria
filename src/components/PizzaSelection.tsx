@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { toast } from 'react-toastify'; // Biblioteca para notificações
+import { toast } from 'react-toastify'; 
 import '../styles/PizzaSelection.css';
 
 interface Pizza {
@@ -15,7 +15,7 @@ interface PizzaSelectionProps {
 const PizzaSelection: React.FC<PizzaSelectionProps> = ({ addPizza }) => {
   const [selectedSize, setSelectedSize] = useState<string | null>(null);
   const [selectedFlavors, setSelectedFlavors] = useState<string[]>([]);
-  const [lastPizzaAdded, setLastPizzaAdded] = useState<string | null>(null); // Para controlar a última notificação
+  const [lastPizzaAdded, setLastPizzaAdded] = useState<string | null>(null); 
 
   const sizes = [
     { label: 'Pequena', slices: 4 },
@@ -25,10 +25,9 @@ const PizzaSelection: React.FC<PizzaSelectionProps> = ({ addPizza }) => {
 
   const flavors = ['Calabresa', 'Mussarela', 'Portuguesa', 'Frango com Catupiry'];
 
-  // Cálculo do preço da pizza baseado no tamanho e número de sabores
   const calculatePizzaPrice = (size: string, flavorsCount: number) => {
     const basePrice = size === 'Pequena' ? 20 : size === 'Média' ? 25 : 30;
-    return basePrice + flavorsCount * 5; // Exemplo de cálculo adicional por sabor
+    return basePrice + flavorsCount * 5; 
   };
 
   const handleAddPizza = () => {
@@ -42,7 +41,6 @@ const PizzaSelection: React.FC<PizzaSelectionProps> = ({ addPizza }) => {
 
       const pizzaDescription = `${selectedSize} com ${selectedFlavors.join(', ')}`;
 
-      // Exibir notificação se for uma pizza diferente da última adicionada
       if (pizzaDescription !== lastPizzaAdded) {
         toast.success(`Pizza ${pizzaDescription} adicionada ao pedido!`, {
           position: "top-right",

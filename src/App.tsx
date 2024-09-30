@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './styles/global.css';
-import { ToastContainer, toast } from 'react-toastify'; // Biblioteca de notificações
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPizzaSlice, faShoppingCart, faGlassCheers, faReceipt, faStar, faCommentDots } from '@fortawesome/free-solid-svg-icons'; // Ícones
@@ -11,7 +11,7 @@ import Pedido from './components/Pedido';
 import FecharPedido from './components/FecharPedido';
 import SaboresMaisPedidos from './components/SaboresMaisPedidos';
 import PedidosAnteriores from './components/PedidosAnteriores';
-import Opinar from './components/Opinar';  // Novo componente de opinião
+import Opinar from './components/Opinar';  
 
 interface Pizza {
   size: string;
@@ -48,7 +48,6 @@ const App: React.FC = () => {
     }
   };
 
-  // Adicionando pizza ao pedido com notificação
   const addPizzaToOrder = (pizza: Pizza) => {
     setOrder([...order, pizza]);
     toast.success('Pizza adicionada ao pedido!', {
@@ -62,7 +61,6 @@ const App: React.FC = () => {
     });
   };
 
-  // Adicionando bebida ao pedido com notificação
   const addBeverageToOrder = (beverage: Beverage) => {
     setOrder([...order, beverage]);
     toast.success('Bebida adicionada ao pedido!', {

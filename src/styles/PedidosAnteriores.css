@@ -30,7 +30,6 @@
   border-color: var(--primary-color);
 }
 
-/* Lista de pedidos anteriores */
 .pedidos-anteriores-container ul {
   list-style-type: none;
   padding: 0;
@@ -58,7 +57,6 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Botões de ação */
 .pedidos-anteriores-container button {
   padding: 10px 20px;
   background-color: var(--primary-color);

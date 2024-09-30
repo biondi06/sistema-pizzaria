@@ -12,7 +12,7 @@
   h2 {
     text-align: center;
     font-size: 28px;
-    color: var(--primary-color); /* Vermelho vibrante da pizza */
+    color: var(--primary-color); 
     margin-bottom: 20px;
   }
   
@@ -23,7 +23,7 @@
   }
   
   strong {
-    color: var(--primary-dark); /* Destaque para o nome do chef e entregador */
+    color: var(--primary-dark); 
   }
   
   .opinion-section {
@@ -34,7 +34,7 @@
     font-size: 20px;
     color: var(--primary-dark);
     margin-bottom: 10px;
-    border-bottom: 2px solid var(--primary-color); /* Linha vermelha vibrante */
+    border-bottom: 2px solid var(--primary-color); 
     padding-bottom: 5px;
     letter-spacing: 0.5px;
   }
@@ -46,7 +46,7 @@
     border-radius: 8px;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
-    background-color: var(--card-bg-color); /* Fundo do campo de texto */
+    background-color: var(--card-bg-color); 
     transition: border-color 0.3s ease, background-color 0.3s ease;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     resize: vertical;
@@ -54,8 +54,8 @@
   }
   
   textarea:focus {
-    border-color: var(--primary-color); /* Borda vermelha vibrante ao foco */
-    background-color: #fff8e1; /* Pequeno destaque amarelo claro */
+    border-color: var(--primary-color); 
+    background-color: #fff8e1; 
     outline: none;
   }
   
@@ -63,7 +63,7 @@
     display: block;
     width: 100%;
     padding: 15px;
-    background-color: var(--primary-color); /* Botão vermelho vibrante */
+    background-color: var(--primary-color); 
     color: white;
     border: none;
     border-radius: 8px;
@@ -76,13 +76,13 @@
   }
   
   button:hover {
-    background-color: var(--primary-dark); /* Tom mais escuro ao hover */
+    background-color: var(--primary-dark); 
     transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(245, 0, 87, 0.3); /* Sombra viva ao hover */
+    box-shadow: 0 15px 30px rgba(245, 0, 87, 0.3); 
   }
   
   button:active {
-    background-color: var(--secondary-color); /* Amarelo ao clicar */
+    background-color: var(--secondary-color); 
     transform: scale(0.98);
     box-shadow: none;
   }

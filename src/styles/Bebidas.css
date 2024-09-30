@@ -19,7 +19,7 @@
 }
 
 .type-selection button.active {
-  background-color: #e53935; /* Vermelho quando ativo */
+  background-color: #e53935; 
   color: white;
 }
 

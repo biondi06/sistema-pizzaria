@@ -4,8 +4,8 @@ import '../styles/Opinar.css';
 interface OpinarProps {
   isAuthenticated: boolean;
   onSubmitOpinion: (pizzaQuality: string, deliveryQuality: string) => void;
-  pizzaChef: string;  // Informações sobre o funcionário que fez a pizza
-  deliveryPerson: string;  // Informações sobre quem fez a entrega
+  pizzaChef: string; 
+  deliveryPerson: string; 
 }
 
 const Opinar: React.FC<OpinarProps> = ({ isAuthenticated, onSubmitOpinion, pizzaChef, deliveryPerson }) => {

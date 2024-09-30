@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../styles/FecharPedido.css'; // Certifique-se de que este caminho está correto
-import { FiMapPin, FiCheckCircle, FiAlertCircle } from 'react-icons/fi'; // Ícones modernos
+import '../styles/FecharPedido.css'; 
+import { FiMapPin, FiCheckCircle, FiAlertCircle } from 'react-icons/fi'; 
 
 interface Pizza {
   size: string;
@@ -21,8 +21,8 @@ interface FecharPedidoProps {
 }
 
 const FecharPedido: React.FC<FecharPedidoProps> = ({ order, address, setAddress, confirmOrder }) => {
-  const [preparationTime] = useState<number>(40); // Simulação de tempo de preparo (em minutos)
-  const [deliveryTime] = useState<number>(30); // Simulação de tempo de entrega (em minutos)
+  const [preparationTime] = useState<number>(40);
+  const [deliveryTime] = useState<number>(30); 
   const [isValid, setIsValid] = useState<boolean>(false);
 
   const calculateTotal = () => {
@@ -33,7 +33,6 @@ const FecharPedido: React.FC<FecharPedidoProps> = ({ order, address, setAddress,
     const newAddress = e.target.value;
     setAddress(newAddress);
 
-    // Validação simples: verificar se o endereço tem mais de 10 caracteres
     if (newAddress.length > 10) {
       setIsValid(true);
     } else {

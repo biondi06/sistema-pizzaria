@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { toast } from 'react-toastify'; // Biblioteca para notificações
+import { toast } from 'react-toastify'; 
 import '../styles/Bebidas.css';
 
 interface Beverage {
@@ -15,7 +15,7 @@ interface BebidasProps {
 
 const Bebidas: React.FC<BebidasProps> = ({ addBeverage }) => {
   const [selectedType, setSelectedType] = useState<BeverageType | null>(null);
-  const [lastBeverageAdded, setLastBeverageAdded] = useState<string | null>(null); // Para controlar a última notificação
+  const [lastBeverageAdded, setLastBeverageAdded] = useState<string | null>(null); 
 
   const beverages: Record<BeverageType, Beverage[]> = {
     Suco: [
@@ -42,7 +42,6 @@ const Bebidas: React.FC<BebidasProps> = ({ addBeverage }) => {
   const handleAddBeverage = (beverage: Beverage) => {
     addBeverage(beverage);
 
-    // Evitar múltiplas notificações se o mesmo item for adicionado novamente
     if (beverage.name !== lastBeverageAdded) {
       toast.success(`${beverage.name} adicionada ao pedido!`, {
         position: "top-right",
@@ -64,8 +63,8 @@ const Bebidas: React.FC<BebidasProps> = ({ addBeverage }) => {
         {Object.keys(beverages).map((type) => (
           <button
             key={type}
-            onClick={() => handleTypeSelect(type as BeverageType)} // Fazendo o cast para BeverageType
-            className={selectedType === type ? 'active' : ''} // Botão ativo para o tipo selecionado
+            onClick={() => handleTypeSelect(type as BeverageType)} 
+            className={selectedType === type ? 'active' : ''} 
           >
             {type}
           </button>

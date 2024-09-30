@@ -8,17 +8,15 @@ interface Produto {
 
 const RelatorioConsumoProdutos: React.FC = () => {
   const [produtos, setProdutos] = useState<Produto[]>([]);
-  const diasAtivos = 7; // Exemplo: considerando uma semana de operação
+  const diasAtivos = 7; 
 
   useEffect(() => {
-    // Exemplo de produtos fictícios - normalmente esses dados viriam de um backend
     const dadosProdutos: Produto[] = [
       { nome: 'Calabresa', consumoTotal: 50, consumoMedio: 50 / diasAtivos },
       { nome: 'Mussarela', consumoTotal: 40, consumoMedio: 40 / diasAtivos },
       { nome: 'Refrigerante', consumoTotal: 30, consumoMedio: 30 / diasAtivos }
     ];
 
-    // Aqui você faria uma requisição para buscar os dados reais
     setProdutos(dadosProdutos);
   }, []);
 

@@ -12,7 +12,6 @@
     transform: translateY(-5px);
   }
   
-  /* Resumo do pedido */
   .order-summary ul {
     list-style-type: none;
     padding: 0;
@@ -30,7 +29,6 @@
     border-bottom: 1px solid #e0e0e0;
   }
   
-  /* Seção de endereço */
   .address-section {
     margin-top: 30px;
     font-family: 'Poppins', sans-serif;
@@ -51,14 +49,14 @@
   }
   
   .address-input-container.valid {
-    border-color: #4caf50; /* Verde para endereço válido */
-    background-color: #e8f5e9; /* Verde claro para feedback visual */
+    border-color: #4caf50; 
+    background-color: #e8f5e9;
     box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
   }
   
   .address-input-container.invalid {
-    border-color: #f44336; /* Vermelho para endereço inválido */
-    background-color: #ffebee; /* Vermelho claro para feedback visual */
+    border-color: #f44336;
+    background-color: #ffebee;
     box-shadow: 0 10px 30px rgba(244, 67, 54, 0.3);
   }
   
@@ -92,7 +90,7 @@
   .address-input:focus {
     outline: none;
     color: #041b33;
-    background-color: #fffbe6; /* Pequeno destaque amarelo ao foco */
+    background-color: #fffbe6;
   }
   
   .validation-icon {
@@ -102,14 +100,13 @@
   }
   
   .validation-icon.valid {
-    color: #4caf50; /* Ícone de check verde */
+    color: #4caf50; 
   }
   
   .validation-icon.invalid {
-    color: #f44336; /* Ícone de alerta vermelho */
+    color: #f44336;
   }
   
-  /* Seção de horário */
   .time-section {
     margin-top: 25px;
     font-family: 'Poppins', sans-serif;
@@ -118,7 +115,6 @@
     letter-spacing: 0.5px;
   }
   
-  /* Botão de confirmação aprimorado */
   .confirm-button {
     padding: 18px 30px;
     background-color: var(--primary-color);
@@ -135,7 +131,7 @@
     display: block;
     width: fit-content;
     margin-left: auto;
-    margin-right: auto; /* Centraliza o botão */
+    margin-right: auto;
   }
   
   .confirm-button:hover {
@@ -150,7 +146,6 @@
     box-shadow: none;
   }
   
-  /* Animação para o botão de confirmação */
   .confirm-button:hover:before {
     content: '';
     position: absolute;
@@ -176,7 +171,6 @@
     }
   }
   
-  /* Feedback visual para confirmação de pedido */
   .order-confirmation {
     margin-top: 30px;
     padding: 25px;
@@ -196,8 +190,7 @@
     background-color: var(--secondary-color);
     box-shadow: 0 20px 40px rgba(255, 193, 7, 0.4);
   }
-  
-  /* Animação de fade-in */
+
   @keyframes fadeIn {
     from {
       opacity: 0;

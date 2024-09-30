@@ -8,7 +8,6 @@ interface Pedido {
 }
 
 const PedidosAnteriores: React.FC = () => {
-  // Simulação de pedidos anteriores
   const pedidos: Pedido[] = [
     { id: 1, itens: ['Pizza Calabresa', 'Coca-Cola'], total: 50 },
     { id: 2, itens: ['Pizza Mussarela', 'Suco de Laranja'], total: 45 },
@@ -17,7 +16,6 @@ const PedidosAnteriores: React.FC = () => {
 
   const refazerPedido = (pedido: Pedido) => {
     alert(`Refazendo o pedido #${pedido.id}`);
-    // Lógica para reutilizar o pedido pode ser implementada aqui
   };
 
   return (

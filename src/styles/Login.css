@@ -1,31 +1,28 @@
-/* Paleta de cores personalizada */
 :root {
-  --primary-color: #E53935; /* Vermelho pizza */
-  --primary-dark: #B71C1C;  /* Vermelho escuro */
-  --primary-light: #FFCDD2; /* Vermelho claro */
-  --secondary-color: #FBC02D; /* Amarelo queijo */
-  --background-color: #f7f7f7; /* Fundo claro */
-  --card-background: #FFE0B2; /* Cor suave para o fundo do card */
-  --text-color: #212121; /* Texto escuro */
-  --shadow-color: rgba(0, 0, 0, 0.1); /* Sombras suaves */
-  --hover-shadow-color: rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+  --primary-color: #E53935; 
+  --primary-dark: #B71C1C; 
+  --primary-light: #FFCDD2;
+  --secondary-color: #FBC02D;
+  --background-color: #f7f7f7;
+  --card-background: #FFE0B2;
+  --text-color: #212121; 
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --hover-shadow-color: rgba(0, 0, 0, 0.2); 
 }
 
-/* Wrapper que centraliza o login */
+
 .login-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background: none; /* Sem fundo extra */
+  background: none;
 }
 
-/* Estilo do cartão de login */
 .login-card {
-  background-color: var(--card-background); /* Fundo suave com toque de pizza (massa) */
-  padding: 40px;
+  background-color: var(--card-background); 
   border-radius: 16px;
-  box-shadow: 0 8px 15px var(--shadow-color); /* Sombra leve */
+  box-shadow: 0 8px 15px var(--shadow-color);
   text-align: center;
   max-width: 400px;
   width: 100%;
@@ -36,10 +33,9 @@
   font-family: 'Poppins', sans-serif;
   font-size: 2.4rem;
   margin-bottom: 20px;
-  color: var(--primary-dark); /* Texto em vermelho escuro */
+  color: var(--primary-dark); 
 }
 
-/* Formulário de login */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -57,14 +53,13 @@
 }
 
 .login-input:focus {
-  border-color: var(--secondary-color); /* Cor amarela ao focar */
-  box-shadow: 0 4px 10px var(--hover-shadow-color); /* Sombra ao focar */
+  border-color: var(--secondary-color); 
+  box-shadow: 0 4px 10px var(--hover-shadow-color);
   outline: none;
 }
 
-/* Estilo do botão */
 .login-button {
-  background-color: var(--primary-color); /* Vermelho pizza */
+  background-color: var(--primary-color);
   color: white;
   padding: 12px 20px;
   border: none;
@@ -75,18 +70,16 @@
 }
 
 .login-button:hover {
-  background-color: var(--primary-dark); /* Vermelho escuro no hover */
+  background-color: var(--primary-dark); 
   transform: scale(1.05);
-  box-shadow: 0 6px 12px var(--hover-shadow-color); /* Sombra ao hover */
+  box-shadow: 0 6px 12px var(--hover-shadow-color); 
 }
 
 .login-button:active {
-  background-color: var(--secondary-color); /* Amarelo queijo ao clicar */
-  transform: scale(0.98);
+  background-color: var(--secondary-color); 
   color: var(--primary-dark);
 }
 
-/* Texto para alternar entre login e registro */
 .login-toggle {
   margin-top: 15px;
   font-size: 0.9rem;
@@ -103,7 +96,6 @@
   text-decoration: underline;
 }
 
-/* Estilo responsivo para telas menores */
 @media (max-width: 768px) {
   .login-wrapper {
     padding: 10px;

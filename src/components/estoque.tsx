@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 interface Ingredient {
   name: string;
-  quantity: number;  // Quantidade em estoque
+  quantity: number; 
 }
 
 const initialStock: Ingredient[] = [
