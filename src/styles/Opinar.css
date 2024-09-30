@@ -49,7 +49,7 @@ strong {
 }
 
 textarea {
-  width: calc(100% - 40px); /* Ajuste da largura */
+  width: calc(100% - 40px);
   height: 150px;
   padding: 15px;
   border: 2px solid var(--primary-light);
@@ -96,19 +96,18 @@ button:active {
   box-shadow: none;
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 768px) {
   .opinar-container {
     padding: 20px;
-    max-width: 90%; /* Ajusta a largura para 90% da tela em dispositivos móveis */
+    max-width: 90%; 
   }
 
   h2 {
-    font-size: 24px; /* Reduz o tamanho da fonte do título */
+    font-size: 24px; 
   }
 
   textarea {
-    height: 120px; /* Ajuste da altura do campo de texto para telas menores */
+    height: 120px; 
   }
 
   button {
@@ -117,14 +116,13 @@ button:active {
   }
 }
 
-/* Ajustes adicionais para telas muito pequenas */
 @media (max-width: 480px) {
   .opinar-container {
     padding: 15px;
-    max-width: 100%; /* Ocupar toda a largura da tela */
+    max-width: 100%; 
   }
 
   textarea {
-    height: 100px; /* Ajuste para telas menores */
+    height: 100px;
   }
 }
