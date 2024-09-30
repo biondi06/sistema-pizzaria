@@ -17,15 +17,26 @@ const PizzaSelection: React.FC<PizzaSelectionProps> = ({ addPizza }) => {
   const [selectedFlavors, setSelectedFlavors] = useState<string[]>([]);
   const [lastPizzaAdded, setLastPizzaAdded] = useState<string | null>(null); // Para controlar a última notificação
 
-  const sizes = ['Pequena', 'Média', 'Grande'];
+  const sizes = [
+    { label: 'Pequena', slices: 4 },
+    { label: 'Média', slices: 6 },
+    { label: 'Grande', slices: 8 },
+  ];
+
   const flavors = ['Calabresa', 'Mussarela', 'Portuguesa', 'Frango com Catupiry'];
+
+  // Cálculo do preço da pizza baseado no tamanho e número de sabores
+  const calculatePizzaPrice = (size: string, flavorsCount: number) => {
+    const basePrice = size === 'Pequena' ? 20 : size === 'Média' ? 25 : 30;
+    return basePrice + flavorsCount * 5; // Exemplo de cálculo adicional por sabor
+  };
 
   const handleAddPizza = () => {
     if (selectedSize && selectedFlavors.length > 0) {
       const pizza: Pizza = {
         size: selectedSize,
         flavors: selectedFlavors,
-        price: 20 + selectedFlavors.length * 5, // Exemplo de cálculo de preço
+        price: calculatePizzaPrice(selectedSize, selectedFlavors.length),
       };
       addPizza(pizza);
 
@@ -63,35 +74,42 @@ const PizzaSelection: React.FC<PizzaSelectionProps> = ({ addPizza }) => {
     <div className="pizza-selection-container">
       <h2>Escolha sua Pizza</h2>
 
+      {/* Divisão horizontal para seleção de tamanho */}
       <div className="size-selection">
         <h3>Tamanho</h3>
-        {sizes.map((size) => (
-          <button
-            key={size}
-            onClick={() => setSelectedSize(size)}
-            className={selectedSize === size ? 'active' : ''}
-          >
-            {size}
-          </button>
-        ))}
+        <div className="size-buttons">
+          {sizes.map((size) => (
+            <button
+              key={size.label}
+              onClick={() => setSelectedSize(size.label)}
+              className={selectedSize === size.label ? 'active' : ''}
+            >
+              {size.label} - {size.slices} pedaços
+            </button>
+          ))}
+        </div>
       </div>
 
+      {/* Divisão horizontal para seleção de sabores */}
       <div className="flavor-selection">
         <h3>Sabores</h3>
-        {flavors.map((flavor) => (
-          <label key={flavor}>
-            <input
-              type="checkbox"
-              value={flavor}
-              onChange={() => handleFlavorChange(flavor)}
-              checked={selectedFlavors.includes(flavor)}
-              disabled={!selectedFlavors.includes(flavor) && selectedFlavors.length >= 2}
-            />
-            {flavor}
-          </label>
-        ))}
+        <div className="flavor-checkboxes">
+          {flavors.map((flavor) => (
+            <label key={flavor} className="flavor-label">
+              <input
+                type="checkbox"
+                value={flavor}
+                onChange={() => handleFlavorChange(flavor)}
+                checked={selectedFlavors.includes(flavor)}
+                disabled={!selectedFlavors.includes(flavor) && selectedFlavors.length >= 2}
+              />
+              {flavor}
+            </label>
+          ))}
+        </div>
       </div>
 
+      {/* Botão para adicionar a pizza ao pedido */}
       <button className="add-button" onClick={handleAddPizza}>
         Adicionar Pizza
       </button>

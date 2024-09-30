@@ -1,26 +1,86 @@
 .pedidos-anteriores-container {
-    padding: 20px;
-  }
-  
-  .pedidos-anteriores-container ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .pedidos-anteriores-container li {
-    margin-bottom: 15px;
-  }
-  
-  .pedidos-anteriores-container button {
-    padding: 5px 10px;
-    background-color: #041b33;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .pedidos-anteriores-container button:hover {
-    background-color: #f50057;
-  }
-  
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+  max-width: 800px;
+  margin: auto;
+}
+
+.pedidos-anteriores-container:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.pedidos-anteriores-container h2 {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--secondary-color);
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.pedidos-anteriores-container h2:hover {
+  color: var(--secondary-color);
+  border-color: var(--primary-color);
+}
+
+/* Lista de pedidos anteriores */
+.pedidos-anteriores-container ul {
+  list-style-type: none;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: #333;
+  margin-top: 20px;
+}
+
+.pedidos-anteriores-container li {
+  margin-bottom: 15px;
+  background-color: var(--card-bg-color);
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pedidos-anteriores-container li:hover {
+  background-color: #ffe0b2;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Botões de ação */
+.pedidos-anteriores-container button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 27, 51, 0.2);
+}
+
+.pedidos-anteriores-container button:hover {
+  background-color: var(--primary-dark);
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(183, 28, 28, 0.3);
+}
+
+.pedidos-anteriores-container button:active {
+  background-color: var(--secondary-color);
+  transform: scale(0.98);
+  box-shadow: none;
+}

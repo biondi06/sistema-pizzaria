@@ -1,0 +1,89 @@
+.opinar-container {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin: 40px auto;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 28px;
+    color: var(--primary-color); /* Vermelho vibrante da pizza */
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 18px;
+    color: var(--text-color);
+    margin-bottom: 15px;
+  }
+  
+  strong {
+    color: var(--primary-dark); /* Destaque para o nome do chef e entregador */
+  }
+  
+  .opinion-section {
+    margin-top: 25px;
+  }
+  
+  .opinion-section h3 {
+    font-size: 20px;
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color); /* Linha vermelha vibrante */
+    padding-bottom: 5px;
+    letter-spacing: 0.5px;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--card-bg-color); /* Fundo do campo de texto */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  textarea:focus {
+    border-color: var(--primary-color); /* Borda vermelha vibrante ao foco */
+    background-color: #fff8e1; /* Pequeno destaque amarelo claro */
+    outline: none;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color); /* Botão vermelho vibrante */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    background-color: var(--primary-dark); /* Tom mais escuro ao hover */
+    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(245, 0, 87, 0.3); /* Sombra viva ao hover */
+  }
+  
+  button:active {
+    background-color: var(--secondary-color); /* Amarelo ao clicar */
+    transform: scale(0.98);
+    box-shadow: none;
+  }
+  

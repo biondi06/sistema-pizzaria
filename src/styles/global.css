@@ -1,162 +1,188 @@
-/* Paleta de cores temáticas aprimorada */
 :root {
-  --primary-color: #E53935; /* Vermelho pizza vibrante */
-  --primary-dark: #B71C1C;  /* Vermelho escuro mais intenso */
-  --primary-light: #FFCDD2; /* Vermelho claro */
-  --secondary-color: #FBC02D; /* Amarelo queijo */
-  --background-color: #F5F5F5; /* Fundo claro */
-  --text-color: #212121; /* Texto escuro */
-  --card-bg-color: #FFF3E0; /* Fundo de cartão suave */
-  --highlight-color: #FFCC80; /* Destaques suaves */
-  --shadow-color: rgba(0, 0, 0, 0.1); /* Sombra leve */
-  --hover-shadow-color: rgba(0, 0, 0, 0.2); /* Sombra ao hover */
-  --wood-background: url('https://www.toptal.com/designers/subtlepatterns/patterns/wood_pattern.png'); /* Textura de madeira */
-  --pizza-background: url('https://i.imgur.com/XoJhsHx.png'); /* Padrão de pizza */
-  --menu-bg: rgba(255, 237, 160, 0.9); /* Fundo de cardápio translúcido */
+  --primary-color: #E53935;
+  --primary-dark: #B71C1C;
+  --primary-light: #FFCDD2;
+  --secondary-color: #FBC02D;
+  --accent-color: #FFD54F;
+  --background-color: #F9F9F9;
+  --text-color: #333333;
+  --card-bg-color: #FFF7E1;
+  --highlight-color: #FFC107;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --hover-shadow-color: rgba(0, 0, 0, 0.3);
+  --wood-background: url('https://www.toptal.com/designers/subtlepatterns/patterns/wood_pattern.png');
+  --pizza-background: url('https://i.imgur.com/XoJhsHx.png');
+  --menu-bg: rgba(255, 255, 255, 0.85);
 }
 
-/* Corpo e fontes */
 body {
   margin: 0;
-  font-family: 'Fredoka One', cursive; /* Fonte divertida e temática */
+  font-family: 'Poppins', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
+  animation: fadeIn 0.5s ease-in-out;
+  line-height: 1.7;
+  font-size: 16px;
 }
 
-/* Estilos gerais */
 .container {
   display: flex;
   height: 100vh;
   background-color: var(--background-color);
   overflow: hidden;
-  background-image: var(--wood-background); /* Textura de madeira */
+  background-image: var(--wood-background);
   background-size: cover;
+  background-position: center;
 }
 
-/* Sidebar estilo cardápio */
 .sidebar {
-  width: 250px;
+  width: 260px;
   background-color: var(--primary-color);
   color: var(--text-color);
-  padding: 20px;
-  box-shadow: 4px 0 10px var(--shadow-color);
-  border-right: 4px solid var(--primary-dark);
+  padding: 30px;
+  box-shadow: 6px 0 12px var(--shadow-color);
+  border-right: 3px solid var(--primary-dark);
+  border-radius: 0 20px 20px 0;
+  position: relative;
+  z-index: 1;
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
-  font-size: 1.2rem;
+  margin-top: 40px;
 }
 
 .sidebar ul li {
-  padding: 15px 0;
+  padding: 15px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.4s ease;
   display: flex;
   align-items: center;
-  color: var(--secondary-color);
-  border-radius: 6px;
+  color: white;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .sidebar ul li:hover {
-  background-color: var(--primary-light);
-  transform: translateX(10px);
-  box-shadow: 0 5px 15px var(--hover-shadow-color);
-  border-radius: 8px;
-}
-
-.sidebar ul li:active {
-  transform: translateX(5px);
-  box-shadow: none;
+  background-color: var(--secondary-color);
+  color: var(--primary-dark);
+  transform: translateX(8px);
+  box-shadow: 0 6px 20px var(--hover-shadow-color);
 }
 
 .sidebar ul li i {
-  margin-right: 10px;
-  font-size: 1.5rem;
+  margin-right: 15px;
+  font-size: 1.8rem;
 }
 
-/* Estilos para o lado direito */
 .content {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 60px;
   background: var(--menu-bg);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   border-radius: 20px;
-  box-shadow: -4px 0 10px var(--shadow-color);
+  box-shadow: -4px 0 20px var(--shadow-color);
   position: relative;
   color: var(--text-color);
 }
 
-.content::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: var(--pizza-background); /* Padrão de pizza */
-  background-size: 80px;
-  opacity: 0.05;
-  z-index: -1;
+.content h1, .content h2, .content h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
 }
 
-/* Estilo aprimorado para cards */
+.content h1 {
+  font-size: 2.5rem;
+}
+
+.content h2 {
+  font-size: 2rem;
+}
+
+.content h3 {
+  font-size: 1.5rem;
+}
+
 .card {
-  background-color: var(--card-bg-color);
-  padding: 20px;
-  margin: 15px;
-  border-radius: 12px;
-  box-shadow: 0 10px 20px var(--hover-shadow-color);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--accent-color);
+  padding: 30px;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px var(--hover-shadow-color);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px var(--hover-shadow-color);
+  transform: translateY(-12px);
+  box-shadow: 0 25px 50px var(--hover-shadow-color);
+  background-color: var(--secondary-color);
 }
 
-/* Estilo aprimorado para botões */
+.chart-box {
+  width: 100%;
+  height: 250px;
+  margin: 40px 0;
+  background-color: var(--accent-color);
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  transition: box-shadow 0.4s ease, transform 0.4s ease, background-color 0.4s ease;
+}
+
+.chart-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px var(--hover-shadow-color);
+  background-color: var(--secondary-color);
+}
+
 button {
   background-color: var(--primary-color);
-  color: var(--text-color);
+  color: white;
   border: none;
-  padding: 12px 25px;
-  border-radius: 8px;
-  font-size: 16px;
+  padding: 14px 35px;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
 }
 
 button:hover {
-  background-color: var(--primary-light);
+  background-color: var(--secondary-color);
   transform: scale(1.05);
-  box-shadow: 0 6px 12px var(--hover-shadow-color);
+  box-shadow: 0 10px 25px var(--hover-shadow-color);
 }
 
 button:active {
-  background-color: var(--primary-dark);
+  background-color: var(--accent-color);
   box-shadow: none;
   transform: scale(0.98);
 }
 
-/* Feedback visual para confirmação de pedido */
 .order-confirmation {
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 30px;
+  padding: 25px;
   background-color: var(--highlight-color);
-  border-radius: 8px;
+  border-radius: 12px;
   text-align: center;
   color: var(--primary-dark);
-  font-size: 18px;
+  font-size: 20px;
   animation: fadeIn 0.5s ease-in-out;
+  font-weight: 700;
 }
 
-/* Animação de fade-in */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -168,18 +194,56 @@ button:active {
   }
 }
 
-/* Estilos aprimorados para gráficos e informações */
-.chart-box {
-  width: 100%;
-  height: 200px;
-  margin: 30px 0;
-  background-color: var(--card-bg-color);
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  transition: box-shadow 0.3s ease;
+/* Ajuste para responsividade */
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 15px;
+    border-radius: 0;
+  }
+
+  .content {
+    padding: 30px;
+  }
+
+  .card, .chart-box {
+    width: 90%;
+    margin: 15px auto;
+  }
+
+  button {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    font-size: 16px;
+  }
 }
 
-.chart-box:hover {
-  box-shadow: 0 10px 20px var(--hover-shadow-color);
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .card, .chart-box {
+    width: 95%;
+  }
+
+  button {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
 }

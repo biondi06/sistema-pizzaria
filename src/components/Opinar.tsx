@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/Opinar.css'; 
 
 interface OpinarProps {
   isAuthenticated: boolean;

@@ -4,38 +4,39 @@
   --primary-dark: #B71C1C;  /* Vermelho escuro */
   --primary-light: #FFCDD2; /* Vermelho claro */
   --secondary-color: #FBC02D; /* Amarelo queijo */
-  --background-color: #F5F5F5; /* Fundo claro */
+  --background-color: #f7f7f7; /* Fundo claro */
+  --card-background: #FFE0B2; /* Cor suave para o fundo do card */
   --text-color: #212121; /* Texto escuro */
-  --highlight-color: #FFCC80; /* Destaques suaves */
-  --shadow-color: rgba(0, 0, 0, 0.15); /* Sombras suaves */
-  --hover-shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Sombras suaves */
+  --hover-shadow-color: rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
 }
 
-/* Estilo do container de login */
-.login-container {
+/* Wrapper que centraliza o login */
+.login-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: var(--background-color);
   padding: 20px;
+  background: none; /* Sem fundo extra */
 }
 
+/* Estilo do cartão de login */
 .login-card {
-  background-color: white;
+  background-color: var(--card-background); /* Fundo suave com toque de pizza (massa) */
   padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px var(--shadow-color);
+  border-radius: 16px;
+  box-shadow: 0 8px 15px var(--shadow-color); /* Sombra leve */
   text-align: center;
   max-width: 400px;
   width: 100%;
+  border: 1px solid var(--primary-dark);
 }
 
 .login-card h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   margin-bottom: 20px;
-  color: var(--primary-dark);
+  color: var(--primary-dark); /* Texto em vermelho escuro */
 }
 
 /* Formulário de login */
@@ -46,45 +47,65 @@
 }
 
 .login-input {
-  padding: 12px 20px;
+  padding: 15px 20px;
   border: 2px solid var(--primary-light);
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
   background-color: var(--background-color);
+  color: var(--text-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .login-input:focus {
-  border-color: var(--primary-color);
+  border-color: var(--secondary-color); /* Cor amarela ao focar */
+  box-shadow: 0 4px 10px var(--hover-shadow-color); /* Sombra ao focar */
   outline: none;
 }
 
 /* Estilo do botão */
 .login-button {
-  background-color: var(--primary-color);
+  background-color: var(--primary-color); /* Vermelho pizza */
   color: white;
   padding: 12px 20px;
   border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .login-button:hover {
-  background-color: var(--primary-dark);
+  background-color: var(--primary-dark); /* Vermelho escuro no hover */
   transform: scale(1.05);
-  box-shadow: 0 6px 12px var(--hover-shadow-color);
+  box-shadow: 0 6px 12px var(--hover-shadow-color); /* Sombra ao hover */
 }
 
 .login-button:active {
-  background-color: var(--primary-light);
+  background-color: var(--secondary-color); /* Amarelo queijo ao clicar */
   transform: scale(0.98);
+  color: var(--primary-dark);
 }
 
-/* Responsividade */
+/* Texto para alternar entre login e registro */
+.login-toggle {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: var(--primary-dark);
+}
+
+.login-toggle span {
+  color: var(--secondary-color);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-toggle span:hover {
+  text-decoration: underline;
+}
+
+/* Estilo responsivo para telas menores */
 @media (max-width: 768px) {
-  .login-container {
+  .login-wrapper {
     padding: 10px;
   }
 

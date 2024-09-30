@@ -1,0 +1,113 @@
+.sabores-mais-pedidos-container {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .sabores-mais-pedidos-container:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+  }
+  
+  .sabores-mais-pedidos-container h2 {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    color: var(--primary-color); /* Vermelho vibrante */
+    letter-spacing: 1.2px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--secondary-color); /* Amarelo queijo */
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .sabores-mais-pedidos-container h2:hover {
+    color: var(--secondary-color); /* Amarelo queijo */
+    border-color: var(--primary-color); /* Vermelho pizza */
+  }
+  
+  /* Lista de sabores */
+  .sabores-mais-pedidos-container ul {
+    list-style-type: none;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #333;
+    margin-top: 20px;
+  }
+  
+  .sabores-mais-pedidos-container li {
+    margin-bottom: 15px;
+    background-color: var(--card-bg-color); /* Cor de fundo refinada */
+    padding: 18px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .sabores-mais-pedidos-container li:hover {
+    background-color: #ffe0b2; /* Tom mais claro no hover */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Destaques de texto para sabores mais pedidos */
+  .sabores-mais-pedidos-container li span {
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--primary-color); /* Vermelho vibrante */
+    letter-spacing: 0.5px;
+  }
+  
+  /* Ícones para sabores */
+  .sabor-icon {
+    font-size: 24px;
+    color: var(--secondary-color); /* Amarelo queijo */
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .sabores-mais-pedidos-container li:hover .sabor-icon {
+    transform: rotate(20deg);
+    color: var(--primary-light); /* Vermelho claro */
+  }
+  
+  /* Animação de hover */
+  .sabores-mais-pedidos-container li:hover span {
+    color: var(--secondary-color); /* Amarelo queijo */
+  }
+  
+  /* Botões de ação */
+  .action-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 27, 51, 0.2);
+  }
+  
+  .action-button:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(183, 28, 28, 0.3);
+  }
+  
+  .action-button:active {
+    background-color: var(--secondary-color);
+    transform: scale(0.98);
+    box-shadow: none;
+  }
+  

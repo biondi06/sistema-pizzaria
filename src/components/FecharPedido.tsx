@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/FecharPedido.css'; // Certifique-se de que este caminho está correto
 import { FiMapPin, FiCheckCircle, FiAlertCircle } from 'react-icons/fi'; // Ícones modernos
 
 interface Pizza {

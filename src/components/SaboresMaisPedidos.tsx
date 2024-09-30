@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/SaboresMaisPedidos.css';
 
 const SaboresMaisPedidos: React.FC = () => {
   // Simulação dos sabores mais pedidos
