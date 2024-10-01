@@ -10,7 +10,6 @@
   --hover-shadow-color: rgba(0, 0, 0, 0.2); 
 }
 
-/* Remover margens e padding do body */
 body {
   margin: 0;
   padding: 0;
@@ -22,7 +21,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ocupa a altura total da página */
+  height: 100vh; 
   padding: 20px;
   background: none;
 }
@@ -35,7 +34,7 @@ body {
   max-width: 400px;
   width: 100%;
   border: 1px solid var(--primary-dark);
-  padding: 30px; /* Adicionei padding para garantir espaçamento interno */
+  padding: 30px; 
 }
 
 .login-card h2 {
@@ -111,7 +110,7 @@ body {
   }
 
   .login-card {
-    padding: 20px; /* Ajustei o padding para telas menores */
+    padding: 20px; 
   }
 
   .login-button {
@@ -119,6 +118,6 @@ body {
   }
 
   .login-card h2 {
-    font-size: 2rem; /* Ajuste de fonte para telas menores */
+    font-size: 2rem; 
   }
 }
