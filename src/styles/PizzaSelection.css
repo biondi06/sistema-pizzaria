@@ -1,7 +1,7 @@
 .pizza-selection-container {
   text-align: center;
   padding: 20px;
-  background-color: var(--card-bg-color); /* Utilizando a cor de fundo dos cards */
+  background-color: var(--card-bg-color); 
   border-radius: 12px;
   box-shadow: 0 10px 20px var(--shadow-color);
   margin: auto;
@@ -13,7 +13,7 @@
 }
 
 .size-selection button {
-  background-color: var(--secondary-color); /* Amarelo queijo */
+  background-color: var(--secondary-color); 
   border: none;
   padding: 10px 20px;
   margin: 5px;
@@ -24,12 +24,12 @@
 }
 
 .size-selection button.active {
-  background-color: var(--primary-color); /* Vermelho pizza vibrante */
+  background-color: var(--primary-color); 
   color: white;
 }
 
 .size-selection button:hover {
-  background-color: var(--highlight-color); /* Destaque mais vivo */
+  background-color: var(--highlight-color);
   transform: scale(1.05);
 }
 
@@ -41,7 +41,7 @@
   display: block;
   margin: 15px 0;
   padding: 10px;
-  background-color: var(--card-bg-color); /* Fundo refinado para harmonizar */
+  background-color: var(--card-bg-color); 
   border-radius: 8px;
   box-shadow: 0 4px 8px var(--shadow-color);
   font-size: 18px;
@@ -49,7 +49,7 @@
 }
 
 .flavor-selection label:hover {
-  background-color: var(--highlight-color); /* Destaque ao hover */
+  background-color: var(--highlight-color); 
   box-shadow: 0 6px 12px var(--hover-shadow-color);
 }
 
@@ -58,7 +58,7 @@
 }
 
 .add-button {
-  background-color: var(--primary-color); /* Vermelho pizza */
+  background-color: var(--primary-color); 
   color: white;
   border: none;
   padding: 12px 30px;
@@ -67,17 +67,17 @@
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(229, 57, 53, 0.4); /* Sombra suave */
+  box-shadow: 0 5px 15px rgba(229, 57, 53, 0.4); 
 }
 
 .add-button:hover {
-  background-color: var(--primary-dark); /* Vermelho escuro */
+  background-color: var(--primary-dark); 
   transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(229, 57, 53, 0.5); /* Sombra mais intensa */
+  box-shadow: 0 10px 25px rgba(229, 57, 53, 0.5); 
 }
 
 .add-button:active {
-  background-color: var(--secondary-color); /* Amarelo ao clicar */
+  background-color: var(--secondary-color); 
   transform: scale(0.98);
   box-shadow: none;
 }
