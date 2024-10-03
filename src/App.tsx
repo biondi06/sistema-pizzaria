@@ -167,7 +167,7 @@ const App: React.FC = () => {
             <FontAwesomeIcon icon={faReceipt} /> Fechar Pedido
           </li>
           <li onClick={() => setActivePage('SaboresMaisPedidos')}>
-            <FontAwesomeIcon icon={faStar} /> Sabores Mais Pedidos
+            <FontAwesomeIcon icon={faStar} /> Populares da semana
           </li>
           <li onClick={() => setActivePage('PedidosAnteriores')}>
             <FontAwesomeIcon icon={faReceipt} /> Pedidos Anteriores
