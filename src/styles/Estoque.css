@@ -1,0 +1,105 @@
+.estoque-container {
+    padding: 30px;
+    background-color: var(--card-bg-color);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    max-width: 900px; 
+    margin: 40px auto;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .estoque-container:hover {
+    box-shadow: 0 15px 40px var(--hover-shadow-color); 
+  }
+  
+  .estoque-container h2 {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    border-bottom: 3px solid var(--primary-dark); 
+    padding-bottom: 10px;
+    display: inline-block;
+  }
+  
+  .estoque-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .estoque-table th,
+  .estoque-table td {
+    padding: 20px;
+    border: 1px solid var(--shadow-color);
+    text-align: center;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .estoque-table th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .estoque-table td {
+    background-color: white;
+    color: var(--text-color);
+  }
+  
+  .estoque-table tr:nth-child(even) {
+    background-color: var(--background-color);
+  }
+  
+  .estoque-table tr:nth-child(odd) {
+    background-color: var(--card-bg-color);
+  }
+  
+  .estoque-table tr:hover {
+    background-color: var(--highlight-color);
+    color: var(--primary-dark);
+  }
+  
+  .estoque-table td {
+    font-weight: 500;
+  }
+  
+  @media (max-width: 768px) {
+    .estoque-container {
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 100%;
+    }
+  
+    .estoque-table th,
+    .estoque-table td {
+      padding: 12px;
+      font-size: 16px;
+    }
+  
+    .estoque-container h2 {
+      font-size: 24px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .estoque-container {
+      padding: 15px;
+    }
+  
+    .estoque-table th,
+    .estoque-table td {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .estoque-container h2 {
+      font-size: 22px;
+    }
+  }
+  

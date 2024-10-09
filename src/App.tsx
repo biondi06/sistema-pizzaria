@@ -3,7 +3,7 @@ import './styles/global.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPizzaSlice, faShoppingCart, faGlassCheers, faReceipt, faStar, faCommentDots } from '@fortawesome/free-solid-svg-icons'; // Ícones
+import { faPizzaSlice, faShoppingCart, faGlassCheers, faReceipt, faStar, faCommentDots, faBox, faUser } from '@fortawesome/free-solid-svg-icons'; 
 import PizzaSelection from './components/PizzaSelection';
 import Login from './components/Login';
 import Bebidas from './components/Bebidas';
@@ -11,8 +11,8 @@ import Pedido from './components/Pedido';
 import FecharPedido from './components/FecharPedido';
 import SaboresMaisPedidos from './components/SaboresMaisPedidos';
 import PedidosAnteriores from './components/PedidosAnteriores';
-import Opinar from './components/Opinar';  
-
+import Opinar from './components/Opinar';
+import Estoque from './components/Estoque'; 
 interface Pizza {
   size: string;
   flavors: string[];
@@ -100,7 +100,6 @@ const App: React.FC = () => {
   };
 
   const submitOpinion = (pizzaQuality: string, deliveryQuality: string) => {
-    console.log("Opinião enviada:", { pizzaQuality, deliveryQuality });
     toast.info('Sua opinião foi registrada!', {
       position: "top-right",
       autoClose: 2000,
@@ -117,30 +116,21 @@ const App: React.FC = () => {
       case 'Login':
         return <Login onLogin={handleLogin} onRegister={handleRegister} isRegistered={isAuthenticated} />;
       case 'Pizzas':
-        return (
-          <div className="content">
-            <PizzaSelection addPizza={addPizzaToOrder} />
-          </div>
-        );
+        return <PizzaSelection addPizza={addPizzaToOrder} />;
       case 'Bebidas':
         return <Bebidas addBeverage={addBeverageToOrder} />;
       case 'Pedido':
         return <Pedido order={order} removeItem={removeItemFromOrder} />;
       case 'FecharPedido':
-        return (
-          <FecharPedido
-            order={order}
-            address={address}
-            setAddress={setAddress}
-            confirmOrder={confirmOrder}
-          />
-        );
+        return <FecharPedido order={order} address={address} setAddress={setAddress} confirmOrder={confirmOrder} />;
       case 'Opinar':
         return <Opinar isAuthenticated={isAuthenticated} onSubmitOpinion={submitOpinion} pizzaChef={pizzaChef} deliveryPerson={deliveryPerson} />;
       case 'SaboresMaisPedidos':
         return <SaboresMaisPedidos />;
       case 'PedidosAnteriores':
         return <PedidosAnteriores />;
+      case 'Estoque':
+        return <Estoque />;
       default:
         return <div>Selecione uma opção no menu.</div>;
     }
@@ -148,43 +138,43 @@ const App: React.FC = () => {
 
   return (
     <div className="container">
-      {/* Sidebar de navegação */}
       <div className="sidebar">
         <ul>
           <li onClick={() => setActivePage('Login')}>
-            <FontAwesomeIcon icon={faPizzaSlice} /> Logar
+            <FontAwesomeIcon icon={faUser} style={{ marginRight: '10px' }} /> Login
           </li>
           <li onClick={() => setActivePage('Pizzas')}>
-            <FontAwesomeIcon icon={faPizzaSlice} /> Pizzas
+            <FontAwesomeIcon icon={faPizzaSlice} style={{ marginRight: '10px' }} /> Pizzas
           </li>
           <li onClick={() => setActivePage('Bebidas')}>
-            <FontAwesomeIcon icon={faGlassCheers} /> Bebidas
+            <FontAwesomeIcon icon={faGlassCheers} style={{ marginRight: '10px' }} /> Bebidas
           </li>
           <li onClick={() => setActivePage('Pedido')}>
-            <FontAwesomeIcon icon={faShoppingCart} /> Visualizar Pedido
+            <FontAwesomeIcon icon={faShoppingCart} style={{ marginRight: '10px' }} /> Visualizar Pedido
           </li>
           <li onClick={handleFinalizeOrder}>
-            <FontAwesomeIcon icon={faReceipt} /> Fechar Pedido
+            <FontAwesomeIcon icon={faReceipt} style={{ marginRight: '10px' }} /> Fechar Pedido
           </li>
           <li onClick={() => setActivePage('SaboresMaisPedidos')}>
-            <FontAwesomeIcon icon={faStar} /> Populares da semana
+            <FontAwesomeIcon icon={faStar} style={{ marginRight: '10px' }} /> Populares da semana
           </li>
           <li onClick={() => setActivePage('PedidosAnteriores')}>
-            <FontAwesomeIcon icon={faReceipt} /> Pedidos Anteriores
+            <FontAwesomeIcon icon={faReceipt} style={{ marginRight: '10px' }} /> Pedidos Anteriores
           </li>
           <li onClick={() => setActivePage('Opinar')}>
-            <FontAwesomeIcon icon={faCommentDots} /> Opinar
+            <FontAwesomeIcon icon={faCommentDots} style={{ marginRight: '10px' }} /> Opinar
           </li>
+          <li onClick={() => setActivePage('Estoque')}>
+            <FontAwesomeIcon icon={faBox} style={{ marginRight: '10px' }} /> Estoque de Produtos
+          </li> 
         </ul>
       </div>
 
-      {/* Conteúdo principal */}
       <div className="content">
         {renderContent()}
         {isOrderFinalized && <div className="order-confirmation">Pedido Concluído com Sucesso!</div>}
       </div>
 
-      {/* Componente Toast para notificações */}
       <ToastContainer />
     </div>
   );
