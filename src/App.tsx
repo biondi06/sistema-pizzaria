@@ -13,6 +13,8 @@ import SaboresMaisPedidos from './components/SaboresMaisPedidos';
 import PedidosAnteriores from './components/PedidosAnteriores';
 import Opinar from './components/Opinar';
 import Estoque from './components/Estoque'; 
+import pizzariaLogo from './pizzaria-logo.png'; // Caminho para a logo
+
 interface Pizza {
   size: string;
   flavors: string[];
@@ -138,6 +140,11 @@ const App: React.FC = () => {
 
   return (
     <div className="container">
+      <header>
+        {/* Logo da pizzaria no topo da página */}
+        <img src={pizzariaLogo} alt="Pizzaria Logo" className="pizzaria-logo" />
+      </header>
+      
       <div className="sidebar">
         <ul>
           <li onClick={() => setActivePage('Login')}>

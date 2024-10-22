@@ -13,19 +13,19 @@
   --wood-background: url('https://www.toptal.com/designers/subtlepatterns/patterns/wood_pattern.png');
   --pizza-background: url('https://i.imgur.com/XoJhsHx.png');
   --menu-bg: rgba(255, 255, 255, 0.85);
+  --gradient-primary: linear-gradient(135deg, #E53935, #B71C1C);
+  --gradient-secondary: linear-gradient(135deg, #FBC02D, #FFD54F);
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  height: 100;
+  height: 100%;
   overflow-y: scroll; 
   scroll-behavior: smooth;
 }
 
-
 body {
-  margin: 0;
   font-family: 'Poppins', sans-serif;
   background-color: var(--background-color);
   color: var(--text-color);
@@ -34,6 +34,7 @@ body {
   font-size: 16px;
 }
 
+/* Container Principal */
 .container {
   display: flex;
   height: 100vh;
@@ -42,14 +43,33 @@ body {
   background-image: var(--wood-background);
   background-size: cover;
   background-position: center;
+  position: relative;
+}
+
+/* Logo da pizzaria no canto superior esquerdo */
+.pizzaria-logo {
+  position: absolute;
+  top: -25px;
+  left: 20px;
+  height: 140px; /* Tamanho da logo */
+  width: auto;
+  z-index: 20;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease; /* Transições mais suaves */
+  opacity: 0.95; /* Um leve ajuste de transparência */
+}
+
+.pizzaria-logo:hover {
+  transform: scale(1.15); /* Efeito de zoom ao passar o mouse */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Sombra mais suave e profunda */
+  opacity: 1; /* Total opacidade ao passar o mouse */
 }
 
 .sidebar {
   width: 260px;
-  background-color: var(--primary-color);
+  background: var(--gradient-primary);
   color: var(--text-color);
-  padding: 30px;
-  box-shadow: 6px 0 12px var(--shadow-color);
+  padding: 40px 30px; /* Ajuste no padding para criar mais espaço */
+  box-shadow: 8px 0 16px var(--shadow-color); /* Sombra mais profunda na sidebar */
   border-right: 3px solid var(--primary-dark);
   border-radius: 0 20px 20px 0;
   position: relative;
@@ -59,26 +79,27 @@ body {
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin-top: 40px;
+  margin-top: 50px; /* Aumentei o espaçamento para um layout mais espaçoso */
 }
 
 .sidebar ul li {
-  padding: 15px;
+  padding: 18px;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease; /* Suavizei as transições */
   display: flex;
   align-items: center;
   color: white;
-  border-radius: 10px;
+  border-radius: 12px; /* Bordas mais arredondadas */
   font-size: 1.2rem;
   font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombras para dar profundidade ao menu */
 }
 
 .sidebar ul li:hover {
   background-color: var(--secondary-color);
   color: var(--primary-dark);
-  transform: translateX(8px);
-  box-shadow: 0 6px 20px var(--hover-shadow-color);
+  transform: translateX(10px); /* Um pouco mais de movimento ao passar o mouse */
+  box-shadow: 0 8px 20px var(--hover-shadow-color);
 }
 
 .sidebar ul li i {
@@ -94,7 +115,7 @@ body {
   align-items: center;
   padding: 60px;
   background: var(--menu-bg);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px); /* Efeito de desfoque mais sutil */
   border-radius: 20px;
   box-shadow: -4px 0 20px var(--shadow-color);
   position: relative;
@@ -107,18 +128,19 @@ body {
   margin-bottom: 20px;
   text-align: center;
   font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Leve sombra no texto */
 }
 
 .content h1 {
-  font-size: 2.5rem;
+  font-size: 2.7rem; /* Tamanho ligeiramente maior */
 }
 
 .content h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 .content h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 .card {
@@ -126,8 +148,8 @@ body {
   padding: 30px;
   margin: 20px;
   border-radius: 15px;
-  box-shadow: 0 10px 30px var(--hover-shadow-color);
-  transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+  box-shadow: 0 12px 30px var(--hover-shadow-color); /* Sombra mais profunda */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Suavizei as transições */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -135,7 +157,7 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-12px);
+  transform: translateY(-15px); /* Movimento mais suave */
   box-shadow: 0 25px 50px var(--hover-shadow-color);
   background-color: var(--secondary-color);
 }
@@ -158,7 +180,7 @@ body {
 }
 
 button {
-  background-color: var(--primary-color);
+  background: var(--gradient-primary);
   color: white;
   border: none;
   padding: 14px 35px;
@@ -170,7 +192,7 @@ button {
 }
 
 button:hover {
-  background-color: var(--secondary-color);
+  background: var(--gradient-secondary);
   transform: scale(1.05);
   box-shadow: 0 10px 25px var(--hover-shadow-color);
 }
@@ -204,6 +226,7 @@ button:active {
   }
 }
 
+/* Responsividade para telas menores */
 @media (max-width: 1200px) {
   .container {
     flex-direction: column;
