@@ -32,7 +32,7 @@ const App: React.FC = () => {
   const [order, setOrder] = useState<(Pizza | Beverage)[]>([]);
   const [address, setAddress] = useState<string>('Endereço padrão do cliente');
   const [isOrderFinalized, setIsOrderFinalized] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // Estado para controlar o menu hamburger
+  const [menuOpen, setMenuOpen] = useState(false); // Estado para controlar o menu hamburger no mobile
 
   const pizzaChef = "João (Chef de Pizza)";
   const deliveryPerson = "Carlos (Entregador)";
@@ -116,7 +116,7 @@ const App: React.FC = () => {
 
   const handleMenuClick = (page: string) => {
     setActivePage(page);
-    setMenuOpen(false); // Fecha o menu após selecionar a página
+    setMenuOpen(false); // Fecha o menu após selecionar a página no mobile
   };
 
   const renderContent = () => {
@@ -147,7 +147,7 @@ const App: React.FC = () => {
   return (
     <div className="container">
       <header>
-        {/* Logo da pizzaria no topo da página */}
+        {/* Logo da pizzaria centralizada no topo da página no mobile */}
         <img src={pizzariaLogo} alt="Pizzaria Logo" className="pizzaria-logo" />
         
         {/* Ícone do menu hamburger para versão mobile */}

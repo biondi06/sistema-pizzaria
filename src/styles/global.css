@@ -46,14 +46,15 @@ body {
   position: relative;
 }
 
-/* Logo da pizzaria no canto superior esquerdo (Desktop) */
+/* Logo da pizzaria no canto superior esquerdo, sem animação */
 .pizzaria-logo {
   position: absolute;
   top: -25px;
   left: -2px;
-  height: 190px;
+  height: 190px; /* Tamanho da logo */
   width: auto;
   z-index: 20;
+  /* Removi a animação de hover */
 }
 
 /* Sidebar com padding ajustado para harmonizar com a logo */
@@ -102,15 +103,15 @@ body {
 /* Ícone do menu hamburger para mobile */
 .mobile-menu {
   display: none;
-  position: relative;
+  position: absolute;
+  top: 20px;
+  right: 20px;
   font-size: 2.5rem;
   cursor: pointer;
   color: var(--primary-color);
   z-index: 30;
-  margin-top: 20px;
 }
 
-/* Itens do menu mobile */
 .mobile-menu-items {
   display: none;
   position: absolute;
@@ -261,41 +262,46 @@ button:active {
 }
 
 /* Responsividade para telas menores */
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 15px;
+    border-radius: 0;
+  }
+
+  .content {
+    padding: 30px;
+  }
+
+  .card, .chart-box {
+    width: 90%;
+    margin: 15px auto;
+  }
+
+  button {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 768px) {
   .sidebar {
     display: none; /* Esconder a sidebar em telas menores */
   }
 
-  /* Centralizar a logo no topo e o menu abaixo dela no mobile */
-  .pizzaria-logo {
-    position: relative;
-    margin: 0 auto;
-    height: 150px;
-    width: auto;
-    top: 20px; /* Ajuste para o topo da tela */
-  }
-
   .mobile-menu {
     display: block; /* Mostrar o menu hamburger em telas menores */
-    margin-top: 10px;
-    text-align: center;
   }
 
   .mobile-menu-items {
-    display: none; /* Exibir o menu apenas quando aberto */
-  }
-
-  .mobile-menu-items.open {
-    display: block; /* Mostra o menu quando o hamburger for clicado */
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    background: var(--primary-color);
-    padding: 60px 30px;
-    width: 260px;
-    box-shadow: -4px 0 15px var(--shadow-color);
-    z-index: 100;
+    display: block; /* Exibir o menu quando estiver aberto */
   }
 
   .container {
@@ -319,4 +325,3 @@ button:active {
     font-size: 1.5rem;
   }
 }
-
