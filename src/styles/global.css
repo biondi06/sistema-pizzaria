@@ -46,15 +46,14 @@ body {
   position: relative;
 }
 
-/* Logo da pizzaria no canto superior esquerdo, sem animação */
+/* Logo da pizzaria no canto superior esquerdo, sem animação (para desktop) */
 .pizzaria-logo {
   position: absolute;
   top: -25px;
   left: -2px;
-  height: 190px; /* Tamanho da logo */
+  height: 190px;
   width: auto;
   z-index: 20;
-  /* Removi a animação de hover */
 }
 
 /* Sidebar com padding ajustado para harmonizar com a logo */
@@ -73,7 +72,7 @@ body {
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin-top: 60px; /* Ajuste o espaço para acomodar a logo acima */
+  margin-top: 60px;
 }
 
 .sidebar ul li {
@@ -103,15 +102,13 @@ body {
 /* Ícone do menu hamburger para mobile */
 .mobile-menu {
   display: none;
-  position: absolute;
-  top: 20px;
-  right: 20px;
   font-size: 2.5rem;
   cursor: pointer;
   color: var(--primary-color);
   z-index: 30;
 }
 
+/* Itens do menu hamburger mobile */
 .mobile-menu-items {
   display: none;
   position: absolute;
@@ -262,46 +259,41 @@ button:active {
 }
 
 /* Responsividade para telas menores */
-@media (max-width: 1200px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .sidebar {
-    width: 100%;
-    padding: 15px;
-    border-radius: 0;
-  }
-
-  .content {
-    padding: 30px;
-  }
-
-  .card, .chart-box {
-    width: 90%;
-    margin: 15px auto;
-  }
-
-  button {
-    width: 100%;
-    max-width: 300px;
-    padding: 12px;
-    font-size: 16px;
-  }
-}
-
 @media (max-width: 768px) {
   .sidebar {
     display: none; /* Esconder a sidebar em telas menores */
   }
 
+  /* Centralizar a logo no topo e o menu abaixo dela no mobile */
+  .pizzaria-logo {
+    position: relative;
+    margin: 0 auto;
+    height: 150px;
+    width: auto;
+    top: 20px; /* Ajuste para o topo da tela */
+  }
+
   .mobile-menu {
     display: block; /* Mostrar o menu hamburger em telas menores */
+    margin: 0 auto;
+    text-align: center;
   }
 
   .mobile-menu-items {
-    display: block; /* Exibir o menu quando estiver aberto */
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    box-shadow: 0 6px 12px var(--shadow-color);
+    border-radius: 8px;
+    padding: 10px;
+    z-index: 100;
+  }
+
+  .mobile-menu-items.open {
+    display: block;
   }
 
   .container {
