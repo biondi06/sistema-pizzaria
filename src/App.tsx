@@ -3,7 +3,7 @@ import './styles/global.css';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPizzaSlice, faShoppingCart, faGlassCheers, faReceipt, faStar, faCommentDots, faBox, faUser } from '@fortawesome/free-solid-svg-icons'; 
+import { faPizzaSlice, faShoppingCart, faGlassCheers, faReceipt, faStar, faCommentDots, faBox, faUser, faBars } from '@fortawesome/free-solid-svg-icons'; 
 import PizzaSelection from './components/PizzaSelection';
 import Login from './components/Login';
 import Bebidas from './components/Bebidas';
@@ -32,6 +32,7 @@ const App: React.FC = () => {
   const [order, setOrder] = useState<(Pizza | Beverage)[]>([]);
   const [address, setAddress] = useState<string>('Endereço padrão do cliente');
   const [isOrderFinalized, setIsOrderFinalized] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // Estado para controlar o menu hamburger
 
   const pizzaChef = "João (Chef de Pizza)";
   const deliveryPerson = "Carlos (Entregador)";
@@ -143,8 +144,31 @@ const App: React.FC = () => {
       <header>
         {/* Logo da pizzaria no topo da página */}
         <img src={pizzariaLogo} alt="Pizzaria Logo" className="pizzaria-logo" />
+        
+        {/* Ícone do menu hamburger para versão mobile */}
+        <div className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)}>
+          <FontAwesomeIcon icon={faBars} />
+        </div>
       </header>
       
+      {/* Menu hamburger mobile */}
+      {menuOpen && (
+        <div className="mobile-menu-items">
+          <ul>
+            <li onClick={() => setActivePage('Login')}>Login</li>
+            <li onClick={() => setActivePage('Pizzas')}>Pizzas</li>
+            <li onClick={() => setActivePage('Bebidas')}>Bebidas</li>
+            <li onClick={() => setActivePage('Pedido')}>Visualizar Pedido</li>
+            <li onClick={handleFinalizeOrder}>Fechar Pedido</li>
+            <li onClick={() => setActivePage('SaboresMaisPedidos')}>Populares da semana</li>
+            <li onClick={() => setActivePage('PedidosAnteriores')}>Pedidos Anteriores</li>
+            <li onClick={() => setActivePage('Opinar')}>Opinar</li>
+            <li onClick={() => setActivePage('Estoque')}>Estoque de Produtos</li>
+          </ul>
+        </div>
+      )}
+
+      {/* Sidebar tradicional para versão desktop */}
       <div className="sidebar">
         <ul>
           <li onClick={() => setActivePage('Login')}>
