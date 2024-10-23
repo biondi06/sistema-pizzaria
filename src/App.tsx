@@ -114,6 +114,11 @@ const App: React.FC = () => {
     });
   };
 
+  const handleMenuClick = (page: string) => {
+    setActivePage(page);
+    setMenuOpen(false); // Fecha o menu após selecionar a página
+  };
+
   const renderContent = () => {
     switch (activePage) {
       case 'Login':
@@ -155,15 +160,15 @@ const App: React.FC = () => {
       {menuOpen && (
         <div className="mobile-menu-items">
           <ul>
-            <li onClick={() => setActivePage('Login')}>Login</li>
-            <li onClick={() => setActivePage('Pizzas')}>Pizzas</li>
-            <li onClick={() => setActivePage('Bebidas')}>Bebidas</li>
-            <li onClick={() => setActivePage('Pedido')}>Visualizar Pedido</li>
+            <li onClick={() => handleMenuClick('Login')}>Login</li>
+            <li onClick={() => handleMenuClick('Pizzas')}>Pizzas</li>
+            <li onClick={() => handleMenuClick('Bebidas')}>Bebidas</li>
+            <li onClick={() => handleMenuClick('Pedido')}>Visualizar Pedido</li>
             <li onClick={handleFinalizeOrder}>Fechar Pedido</li>
-            <li onClick={() => setActivePage('SaboresMaisPedidos')}>Populares da semana</li>
-            <li onClick={() => setActivePage('PedidosAnteriores')}>Pedidos Anteriores</li>
-            <li onClick={() => setActivePage('Opinar')}>Opinar</li>
-            <li onClick={() => setActivePage('Estoque')}>Estoque de Produtos</li>
+            <li onClick={() => handleMenuClick('SaboresMaisPedidos')}>Populares da semana</li>
+            <li onClick={() => handleMenuClick('PedidosAnteriores')}>Pedidos Anteriores</li>
+            <li onClick={() => handleMenuClick('Opinar')}>Opinar</li>
+            <li onClick={() => handleMenuClick('Estoque')}>Estoque de Produtos</li>
           </ul>
         </div>
       )}
@@ -171,31 +176,31 @@ const App: React.FC = () => {
       {/* Sidebar tradicional para versão desktop */}
       <div className="sidebar">
         <ul>
-          <li onClick={() => setActivePage('Login')}>
+          <li onClick={() => handleMenuClick('Login')}>
             <FontAwesomeIcon icon={faUser} style={{ marginRight: '10px' }} /> Login
           </li>
-          <li onClick={() => setActivePage('Pizzas')}>
+          <li onClick={() => handleMenuClick('Pizzas')}>
             <FontAwesomeIcon icon={faPizzaSlice} style={{ marginRight: '10px' }} /> Pizzas
           </li>
-          <li onClick={() => setActivePage('Bebidas')}>
+          <li onClick={() => handleMenuClick('Bebidas')}>
             <FontAwesomeIcon icon={faGlassCheers} style={{ marginRight: '10px' }} /> Bebidas
           </li>
-          <li onClick={() => setActivePage('Pedido')}>
+          <li onClick={() => handleMenuClick('Pedido')}>
             <FontAwesomeIcon icon={faShoppingCart} style={{ marginRight: '10px' }} /> Visualizar Pedido
           </li>
           <li onClick={handleFinalizeOrder}>
             <FontAwesomeIcon icon={faReceipt} style={{ marginRight: '10px' }} /> Fechar Pedido
           </li>
-          <li onClick={() => setActivePage('SaboresMaisPedidos')}>
+          <li onClick={() => handleMenuClick('SaboresMaisPedidos')}>
             <FontAwesomeIcon icon={faStar} style={{ marginRight: '10px' }} /> Populares da semana
           </li>
-          <li onClick={() => setActivePage('PedidosAnteriores')}>
+          <li onClick={() => handleMenuClick('PedidosAnteriores')}>
             <FontAwesomeIcon icon={faReceipt} style={{ marginRight: '10px' }} /> Pedidos Anteriores
           </li>
-          <li onClick={() => setActivePage('Opinar')}>
+          <li onClick={() => handleMenuClick('Opinar')}>
             <FontAwesomeIcon icon={faCommentDots} style={{ marginRight: '10px' }} /> Opinar
           </li>
-          <li onClick={() => setActivePage('Estoque')}>
+          <li onClick={() => handleMenuClick('Estoque')}>
             <FontAwesomeIcon icon={faBox} style={{ marginRight: '10px' }} /> Estoque de Produtos
           </li> 
         </ul>
