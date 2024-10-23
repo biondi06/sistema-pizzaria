@@ -11,6 +11,7 @@
   --shadow-color: rgba(0, 0, 0, 0.1);
   --hover-shadow-color: rgba(0, 0, 0, 0.3);
   --wood-background: url('https://www.toptal.com/designers/subtlepatterns/patterns/wood_pattern.png');
+  --pizza-background: url('https://i.imgur.com/XoJhsHx.png');
   --menu-bg: rgba(255, 255, 255, 0.85);
   --gradient-primary: linear-gradient(135deg, #E53935, #B71C1C);
   --gradient-secondary: linear-gradient(135deg, #FBC02D, #FFD54F);
@@ -45,7 +46,7 @@ body {
   position: relative;
 }
 
-/* Logo da pizzaria no canto superior esquerdo para desktop */
+/* Logo da pizzaria no canto superior esquerdo (Desktop) */
 .pizzaria-logo {
   position: absolute;
   top: -25px;
@@ -55,7 +56,7 @@ body {
   z-index: 20;
 }
 
-/* Sidebar padrão para desktop */
+/* Sidebar com padding ajustado para harmonizar com a logo */
 .sidebar {
   width: 260px;
   background: var(--gradient-primary);
@@ -71,7 +72,7 @@ body {
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin-top: 60px;
+  margin-top: 60px; /* Ajuste o espaço para acomodar a logo acima */
 }
 
 .sidebar ul li {
@@ -96,6 +97,48 @@ body {
 .sidebar ul li i {
   margin-right: 15px;
   font-size: 1.8rem;
+}
+
+/* Ícone do menu hamburger para mobile */
+.mobile-menu {
+  display: none;
+  position: relative;
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: var(--primary-color);
+  z-index: 30;
+  margin-top: 20px;
+}
+
+/* Itens do menu mobile */
+.mobile-menu-items {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: white;
+  box-shadow: 0 6px 12px var(--shadow-color);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 100;
+}
+
+.mobile-menu-items ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu-items ul li {
+  padding: 10px;
+  color: var(--primary-color);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-menu-items ul li:hover {
+  background-color: var(--primary-light);
 }
 
 /* Conteúdo principal */
@@ -153,6 +196,23 @@ body {
   background-color: var(--secondary-color);
 }
 
+.chart-box {
+  width: 100%;
+  height: 250px;
+  margin: 40px 0;
+  background-color: var(--accent-color);
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  padding: 30px;
+  transition: box-shadow 0.4s ease, transform 0.4s ease, background-color 0.4s ease;
+}
+
+.chart-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px var(--hover-shadow-color);
+  background-color: var(--secondary-color);
+}
+
 button {
   background: var(--gradient-primary);
   color: white;
@@ -177,74 +237,76 @@ button:active {
   transform: scale(0.98);
 }
 
-/* MOBILE SPECIFIC CHANGES */
+.order-confirmation {
+  margin-top: 30px;
+  padding: 25px;
+  background-color: var(--highlight-color);
+  border-radius: 12px;
+  text-align: center;
+  color: var(--primary-dark);
+  font-size: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+  font-weight: 700;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade para telas menores */
 @media (max-width: 768px) {
   .sidebar {
-    display: none; /* Esconder sidebar no mobile */
+    display: none; /* Esconder a sidebar em telas menores */
   }
 
-  /* Centralizar a logo no mobile */
+  /* Centralizar a logo no topo e o menu abaixo dela no mobile */
   .pizzaria-logo {
     position: relative;
     margin: 0 auto;
     height: 150px;
     width: auto;
+    top: 20px; /* Ajuste para o topo da tela */
   }
 
-  /* Menu hamburger visível no mobile */
   .mobile-menu {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 2.5rem;
-    cursor: pointer;
-    color: var(--primary-color);
-    z-index: 30;
+    display: block; /* Mostrar o menu hamburger em telas menores */
+    margin-top: 10px;
+    text-align: center;
   }
 
-  /* Menu mobile */
   .mobile-menu-items {
-    display: none;
+    display: none; /* Exibir o menu apenas quando aberto */
+  }
+
+  .mobile-menu-items.open {
+    display: block; /* Mostra o menu quando o hamburger for clicado */
     position: fixed;
     top: 0;
     right: 0;
     height: 100%;
-    width: 260px;
     background: var(--primary-color);
     padding: 60px 30px;
+    width: 260px;
     box-shadow: -4px 0 15px var(--shadow-color);
     z-index: 100;
-    transition: transform 0.3s ease;
   }
 
-  .mobile-menu-items.open {
-    display: block;
-    transform: translateX(0);
-  }
-
-  .mobile-menu-items ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .mobile-menu-items ul li {
-    padding: 15px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .mobile-menu-items ul li:hover {
-    background-color: var(--primary-dark);
+  .container {
+    flex-direction: column;
   }
 
   .content {
     padding: 20px;
   }
 
-  .card {
+  .card, .chart-box {
     width: 95%;
   }
 
@@ -257,3 +319,4 @@ button:active {
     font-size: 1.5rem;
   }
 }
+
