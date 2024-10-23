@@ -11,7 +11,6 @@
   --shadow-color: rgba(0, 0, 0, 0.1);
   --hover-shadow-color: rgba(0, 0, 0, 0.3);
   --wood-background: url('https://www.toptal.com/designers/subtlepatterns/patterns/wood_pattern.png');
-  --pizza-background: url('https://i.imgur.com/XoJhsHx.png');
   --menu-bg: rgba(255, 255, 255, 0.85);
   --gradient-primary: linear-gradient(135deg, #E53935, #B71C1C);
   --gradient-secondary: linear-gradient(135deg, #FBC02D, #FFD54F);
@@ -37,6 +36,7 @@ body {
 /* Container Principal */
 .container {
   display: flex;
+  flex-direction: column;
   height: 100vh;
   background-color: var(--background-color);
   overflow-y: auto;
@@ -46,18 +46,29 @@ body {
   position: relative;
 }
 
-/* Logo da pizzaria no canto superior esquerdo, sem animação */
+/* Logo centralizada */
 .pizzaria-logo {
-  position: absolute;
-  top: -25px;
-  left: -2px;
-  height: 190px; /* Tamanho da logo */
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  top: 20px;
+  height: 160px; /* Tamanho harmonioso */
   width: auto;
   z-index: 20;
-  /* Removi a animação de hover */
 }
 
-/* Sidebar com padding ajustado para harmonizar com a logo */
+/* Header que contém a logo */
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-dark);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Sidebar */
 .sidebar {
   width: 260px;
   background: var(--gradient-primary);
@@ -73,7 +84,7 @@ body {
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin-top: 60px; /* Ajuste o espaço para acomodar a logo acima */
+  margin-top: 60px;
 }
 
 .sidebar ul li {
@@ -100,7 +111,7 @@ body {
   font-size: 1.8rem;
 }
 
-/* Ícone do menu hamburger para mobile */
+/* Ícone do menu hamburger */
 .mobile-menu {
   display: none;
   position: absolute;
@@ -108,7 +119,7 @@ body {
   right: 20px;
   font-size: 2.5rem;
   cursor: pointer;
-  color: var(--primary-color);
+  color: white;
   z-index: 30;
 }
 
@@ -178,6 +189,7 @@ body {
   font-size: 1.5rem;
 }
 
+/* Cartões */
 .card {
   background-color: var(--accent-color);
   padding: 30px;
@@ -293,15 +305,11 @@ button:active {
 
 @media (max-width: 768px) {
   .sidebar {
-    display: none; /* Esconder a sidebar em telas menores */
+    display: none;
   }
 
   .mobile-menu {
-    display: block; /* Mostrar o menu hamburger em telas menores */
-  }
-
-  .mobile-menu-items {
-    display: block; /* Exibir o menu quando estiver aberto */
+    display: block;
   }
 
   .container {
