@@ -34,7 +34,6 @@ body {
   font-size: 16px;
 }
 
-/* Container Principal */
 .container {
   display: flex;
   height: 100vh;
@@ -46,18 +45,15 @@ body {
   position: relative;
 }
 
-/* Logo da pizzaria no canto superior esquerdo, sem animação */
 .pizzaria-logo {
   position: absolute;
   top: -25px;
   left: -2px;
-  height: 190px; /* Tamanho da logo */
+  height: 190px; 
   width: auto;
   z-index: 20;
-  /* Removi a animação de hover */
 }
 
-/* Sidebar com padding ajustado para harmonizar com a logo */
 .sidebar {
   width: 260px;
   background: var(--gradient-primary);
@@ -73,7 +69,7 @@ body {
 .sidebar ul {
   list-style: none;
   padding: 0;
-  margin-top: 60px; /* Ajuste o espaço para acomodar a logo acima */
+  margin-top: 60px; 
 }
 
 .sidebar ul li {
@@ -100,7 +96,6 @@ body {
   font-size: 1.8rem;
 }
 
-/* Ícone do menu hamburger para mobile */
 .mobile-menu {
   display: none;
   position: absolute;
@@ -142,7 +137,6 @@ body {
   background-color: var(--primary-light);
 }
 
-/* Conteúdo principal */
 .content {
   flex: 1;
   display: flex;
@@ -261,7 +255,6 @@ button:active {
   }
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 1200px) {
   .container {
     flex-direction: column;
@@ -293,14 +286,13 @@ button:active {
 
 @media (max-width: 768px) {
   .sidebar {
-    display: none; /* Esconder a sidebar em telas menores */
+    display: none; 
   }
 
-  /* Centralizar a logo e o ícone do menu hamburger no topo */
   .mobile-menu {
-    display: block; /* Mostrar o menu hamburger em telas menores */
+    display: block;
     position: absolute;
-    top: 120px; /* Abaixo da logo */
+    top: 120px; 
     left: 50%;
     transform: translateX(-50%);
     font-size: 2.5rem;
@@ -309,7 +301,6 @@ button:active {
     z-index: 30;
   }
 
-  /* Centralizar a logo no topo */
   .pizzaria-logo {
     position: absolute;
     top: 20px;
